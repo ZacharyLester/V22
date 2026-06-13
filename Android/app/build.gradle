@@ -18,7 +18,8 @@ android {
         arguments "-DANDROID_STL=c++_shared",
                   "-DXASH_SDL=OFF",
                   "-DXASH_STATIC_GAMELIB=ON",
-                  "-DMAINUI_USE_STB=ON"
+                  "-DMAINUI_USE_STB=ON",
+                  "-DCMAKE_C_FLAGS=-Wno-incompatible-function-pointer-types"
     		}
 		}
 	}
