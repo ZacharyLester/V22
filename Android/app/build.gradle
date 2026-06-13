@@ -2,53 +2,61 @@ apply plugin: 'com.android.application'
 
 android {
 	namespace "in.celest.xash3d.csbtem"
-    compileSdkVersion 36  // Android 16
+	compileSdkVersion 36
 
-    defaultConfig {
-        applicationId "in.celest.xash3d.csbtem"
-        minSdkVersion 21
-        targetSdkVersion 36  // Android 16
+	defaultConfig {
+		applicationId "in.celest.xash3d.csbtem"
+		minSdkVersion 21
+		targetSdkVersion 36
 
-        ndk {
-    abiFilters 'armeabi-v7a', 'arm64-v8a'
-}
-    }
+		ndk {
+			abiFilters 'armeabi-v7a', 'arm64-v8a'
+		}
 
-    buildTypes {
-        debug {
-            minifyEnabled false
-        }
-        release {
-            minifyEnabled false
-        }
-    }
+		externalNativeBuild {
+			cmake {
+				arguments "-DANDROID_STL=c++_shared",
+				          "-DXASH_SDL=OFF",
+				          "-DXASH_STATIC_GAMELIB=ON"
+			}
+		}
+	}
 
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['src/main/prebuiltLibs']
-        }
-    }
+	externalNativeBuild {
+		cmake {
+			path "../../CMakeLists.txt"
+			version "3.10.2+"
+		}
+	}
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
-    }
-    
-    buildFeatures {
-    	buildConfig true
+	buildTypes {
+		debug {
+			minifyEnabled false
+		}
+		release {
+			minifyEnabled false
+		}
+	}
+
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_11
+		targetCompatibility JavaVersion.VERSION_11
+	}
+
+	buildFeatures {
+		buildConfig true
 	}
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    
-    // Fix duplicate Kotlin stdlib classes
-    constraints {
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22") {
-            because("kotlin-stdlib-jdk7 is now part of kotlin-stdlib")
-        }
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22") {
-            because("kotlin-stdlib-jdk8 is now part of kotlin-stdlib")
-        }
-    }
+	implementation 'androidx.appcompat:appcompat:1.7.0'
+
+	constraints {
+		implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22") {
+			because("kotlin-stdlib-jdk7 is now part of kotlin-stdlib")
+		}
+		implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22") {
+			because("kotlin-stdlib-jdk8 is now part of kotlin-stdlib")
+		}
+	}
 }
