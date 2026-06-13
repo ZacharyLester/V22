@@ -19,7 +19,7 @@ jobs:
       - name: Build APK
         run: |
           chmod +x Android/gradlew
-          cd Android && ./gradlew assembleDebug --info 2>&1 | tail -200
+          cd Android && ./gradlew assembleDebug --info
       
       - name: Upload APK
         uses: actions/upload-artifact@v4
