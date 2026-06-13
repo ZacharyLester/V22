@@ -1,0 +1,15 @@
+[submodule "mainui_cpp"]
+	path = mainui_cpp
+	url = https://github.com/MoeMod/mainui_cpp
+[submodule "nanogl"]
+	path = nanogl
+	url = https://github.com/MoeMod/nanogl
+[submodule "gl-wes-v2"]
+	path = gl-wes-v2
+	url = https://github.com/MoeMod/gl-wes-v2
+[submodule "imgui"]
+	path = imgui
+	url = https://github.com/MoeMod/imgui
+[submodule "3rdparty/QindieGL"]
+	path = 3rdparty/QindieGL
+	url = https://github.com/MoeMod/QindieGL
