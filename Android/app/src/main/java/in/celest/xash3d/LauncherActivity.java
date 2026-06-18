@@ -12,7 +12,7 @@ import android.text.style.*;
 import android.util.*;
 import android.view.*;
 import android.widget.*;
-import in.celest.xash3d.csbtem.*;
+import com.valstrike16.*;
 import java.io.*;
 import java.net.*;
 import java.util.LinkedList;
