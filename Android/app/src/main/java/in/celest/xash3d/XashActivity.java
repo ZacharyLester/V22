@@ -41,6 +41,12 @@ import in.celest.xash3d.XashConfig;
 import in.celest.xash3d.JoystickHandler;
 import android.provider.Settings.Secure;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+
 import su.xash.fwgslib.*;
 import android.sax.*;
 
@@ -133,6 +139,7 @@ public class XashActivity extends Activity {
 		mPref = this.getSharedPreferences( "engine", 0 );
 
 		launchSurfaceAndEngine();
+		gyroscope = new Gyroscope(this);
 	}
 
 		// Events
@@ -148,7 +155,7 @@ public class XashActivity extends Activity {
 			// wait until Xash will save all configs
 			mSurface.engineThreadWait();
 		}
-		
+		gyroscope.stop();	
 		super.onPause();
 	}
 
@@ -160,7 +167,7 @@ public class XashActivity extends Activity {
 			nativeOnResume();
 		
 		mEnginePaused = false;
-		
+		gyroscope.start();
 		super.onResume();
 	}
 	
