@@ -2,63 +2,53 @@ apply plugin: 'com.android.application'
 
 android {
 	namespace "in.celest.xash3d.csbtem"
-	compileSdkVersion 36
+    compileSdkVersion 36  // Android 16
 
-	defaultConfig {
-		applicationId "in.celest.xash3d.csbtem"
-		minSdkVersion 21
-		targetSdkVersion 36
+    defaultConfig {
+        applicationId "in.celest.xash3d.csbtem"
+        minSdkVersion 21
+        targetSdkVersion 36  // Android 16
 
-		ndk {
-			abiFilters 'armeabi-v7a', 'arm64-v8a'
-		}
+        ndk {
+    abiFilters 'armeabi-v7a', 'arm64-v8a'
+}
+    }
 
-		externalNativeBuild {
-    	cmake {
-        arguments "-DANDROID_STL=c++_shared",
-                  "-DXASH_SDL=OFF",
-                  "-DXASH_STATIC_GAMELIB=ON",
-                  "-DMAINUI_USE_STB=ON",
-                  "-DCMAKE_C_FLAGS=-Wno-incompatible-function-pointer-types"
-    		}
-		}
-	}
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+        }
+    }
 
-	externalNativeBuild {
-		cmake {
-			path "../../CMakeLists.txt"
-			version "3.22.1"
-		}
-	}
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/prebuiltLibs']
+        }
+    }
 
-	buildTypes {
-		debug {
-			minifyEnabled false
-		}
-		release {
-			minifyEnabled false
-		}
-	}
-
-	compileOptions {
-		sourceCompatibility JavaVersion.VERSION_11
-		targetCompatibility JavaVersion.VERSION_11
-	}
-
-	buildFeatures {
-		buildConfig true
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    
+    buildFeatures {
+    	buildConfig true
 	}
 }
 
 dependencies {
-	implementation 'androidx.appcompat:appcompat:1.7.0'
-
-	constraints {
-		implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22") {
-			because("kotlin-stdlib-jdk7 is now part of kotlin-stdlib")
-		}
-		implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22") {
-			because("kotlin-stdlib-jdk8 is now part of kotlin-stdlib")
-		}
-	}
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    
+    // Fix duplicate Kotlin stdlib classes
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22") {
+            because("kotlin-stdlib-jdk7 is now part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22") {
+            because("kotlin-stdlib-jdk8 is now part of kotlin-stdlib")
+        }
+    }
 }
