@@ -100,7 +100,7 @@ public class XashActivity extends Activity {
 	public static SharedPreferences mPref = null;
 	private static boolean mUseVolume;
 	public static View mDecorView;
-	
+	private Gyroscope gyroscope;
 
 	// Load the .so
 	static 
