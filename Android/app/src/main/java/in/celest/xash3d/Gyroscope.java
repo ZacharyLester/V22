@@ -1,4 +1,4 @@
-package com.valstrike16;
+package in.celest.xash3d;
 
 import android.content.Context;
 import android.hardware.Sensor;

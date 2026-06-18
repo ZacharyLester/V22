@@ -1,4 +1,4 @@
-package com.valstrike16;
+package in.celest.xash3d;
 
 import javax.microedition.khronos.egl.EGL10;
 import javax.microedition.khronos.egl.EGLConfig;
@@ -36,9 +36,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.security.MessageDigest;
 
-import com.valstrike16.R;
-import com.valstrike16.XashConfig;
-import com.valstrike16.JoystickHandler;
+import in.celest.xash3d.csbtem.R;
+import in.celest.xash3d.XashConfig;
+import in.celest.xash3d.JoystickHandler;
 import android.provider.Settings.Secure;
 
 import android.content.Context;
@@ -318,7 +318,7 @@ public class XashActivity extends Activity {
 			mMinWidth = 640;
 			mMinHeight = 480;
 			
-			final String allowed = "com.valstrike16.cs16client";
+			final String allowed = "in.celest.xash3d.cs16client";
 			
 			if( !FWGSLib.checkGameLibDir( gamelibdir, allowed ) || 
 				CertCheck.dumbCertificateCheck( getContext(), allowed, null, true ) )
@@ -800,7 +800,7 @@ public class XashActivity extends Activity {
 		// open GP
 		try 
 		{
-			mSingleton.startActivity( new Intent( Intent.ACTION_VIEW, Uri.parse("market://details?id=com.valstrike16.hl") ) );
+			mSingleton.startActivity( new Intent( Intent.ACTION_VIEW, Uri.parse("market://details?id=in.celest.xash3d.hl") ) );
 		}
 		catch( android.content.ActivityNotFoundException e ) 
 		{

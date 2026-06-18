@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-	namespace "com.valstrike16"
+	namespace "in.celest.xash3d.csbtem"
     compileSdkVersion 36  // Android 16
 
     defaultConfig {
-        applicationId "com.valstrike16"
+        applicationId "in.celest.xash3d.csbtem"
         minSdkVersion 21
         targetSdkVersion 36  // Android 16
 
