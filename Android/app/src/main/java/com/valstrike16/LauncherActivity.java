@@ -1,4 +1,4 @@
-package in.celest.xash3d;
+package com.valstrike16;
 
 import android.app.*;
 import android.content.*;
@@ -12,7 +12,7 @@ import android.text.style.*;
 import android.util.*;
 import android.view.*;
 import android.widget.*;
-import in.celest.xash3d.csbtem.*;
+import com.valstrike16.csbtem.*;
 import java.io.*;
 import java.net.*;
 import java.util.LinkedList;
@@ -27,7 +27,7 @@ import su.xash.fwgslib.*;
 
 public class LauncherActivity extends Activity 
 {
-	// public final static String ARGV = "in.celest.xash3d.MESSAGE";
+	// public final static String ARGV = "com.valstrike16.MESSAGE";
 	public final static int sdk = FWGSLib.sdk;
 	public final static String UPDATE_LINK = "https://api.github.com/repos/FWGS/xash3d-android-project/releases"; // releases/latest doesn't return prerelease and drafts
 	static SharedPreferences mPref;

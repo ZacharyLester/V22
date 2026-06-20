@@ -22,37 +22,37 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round">
         <activity
-            android:name="in.celest.xash3d.LauncherActivity"
+            android:name="com.valstrike16.LauncherActivity"
             android:exported="true"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
             android:label="@string/launcher_name"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
-                <action android:name="in.celest.xash3d.LauncherActivity" />
+                <action android:name="com.valstrike16.LauncherActivity" />
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="in.celest.xash3d.XashActivity"
+            android:name="com.valstrike16.XashActivity"
             android:exported="false"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="sensorLandscape">
             <intent-filter>
-                <action android:name="in.celest.xash3d.START" />
+                <action android:name="com.valstrike16.START" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <service
-            android:name="in.celest.xash3d.XashService"
+            android:name="com.valstrike16.XashService"
             android:stopWithTask="false" />
 
-        <receiver android:name="in.celest.xash3d.XashService$exitButtonListener"
+        <receiver android:name="com.valstrike16.XashService$exitButtonListener"
             android:exported="false" />
-        <receiver android:name="in.celest.xash3d.InstallReceiver"
+        <receiver android:name="com.valstrike16.InstallReceiver"
             android:exported="true">
             <intent-filter android:priority="100">
                 <category android:name="android.intent.category.DEFAULT" />
