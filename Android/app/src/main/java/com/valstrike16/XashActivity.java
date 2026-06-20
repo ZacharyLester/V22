@@ -36,7 +36,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.security.MessageDigest;
 
-import com.valstrike16.csbtem.R;
+import com.valstrike16.R;
 import com.valstrike16.XashConfig;
 import com.valstrike16.JoystickHandler;
 import android.provider.Settings.Secure;
@@ -106,11 +106,6 @@ public class XashActivity extends Activity {
 	static 
 	{
 		System.loadLibrary( "xash" );
-	}
-
-	static 
-	{
-		System.loadLibrary("AML");
 	}
 
 	// Setup

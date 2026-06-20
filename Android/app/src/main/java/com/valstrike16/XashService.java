@@ -29,7 +29,7 @@ import java.lang.*;
 import java.util.List;
 import java.security.MessageDigest;
 
-import com.valstrike16.csbtem.R;
+import com.valstrike16.R;
 import com.valstrike16.XashConfig;
 import com.valstrike16.JoystickHandler;
 
