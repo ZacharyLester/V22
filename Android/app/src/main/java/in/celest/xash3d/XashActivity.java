@@ -108,6 +108,11 @@ public class XashActivity extends Activity {
 		System.loadLibrary( "xash" );
 	}
 
+	static 
+	{
+		System.loadLibrary("AML");
+	}
+
 	// Setup
 	@Override
 	protected void onCreate( Bundle savedInstanceState ) 
