@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     android:installLocation="auto"
     android:versionCode="1613"
-    android:versionName="v22-hy">
+    android:versionName="v5.3">
     <!-- OpenGL ES 1.1 -->
     <uses-feature android:glEsVersion="0x00010000" /> <!-- Permissions -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
